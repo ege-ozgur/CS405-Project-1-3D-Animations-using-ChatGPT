@@ -168,10 +168,10 @@ function getModelViewMatrix() {
     const RotationMatrixY = createRotationMatrix_Y(Math.PI / 4);
     const RotationMatrixZ = createRotationMatrix_Z(Math.PI / 3);
     var modelViewMatrix = multiplyMatrices(IdentityMatrix, TranslationMatrix);
-    modelViewMatrix = multiplyMatrices(modelViewMatrix, ScaleMatrix);
-    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixX);
-    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixY);
     modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixZ);
+    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixY);
+    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixX);
+    modelViewMatrix = multiplyMatrices(modelViewMatrix, ScaleMatrix);
     return modelViewMatrix;
 }
 
@@ -204,10 +204,10 @@ function getPeriodicMovement(startTime) {
 
     // Combine transformations
     var modelViewMatrix = multiplyMatrices(IdentityMatrix, TranslationMatrix);
-    modelViewMatrix = multiplyMatrices(modelViewMatrix, ScaleMatrix);
-    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixX);
-    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixY);
     modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixZ);
+    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixY);
+    modelViewMatrix = multiplyMatrices(modelViewMatrix, RotationMatrixX);
+    modelViewMatrix = multiplyMatrices(modelViewMatrix, ScaleMatrix);
 
     return modelViewMatrix;
 }
